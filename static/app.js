@@ -172,6 +172,28 @@ textarea.addEventListener("keydown", (event) => {
   }
 });
 
+// Function to set the system message
+async function setSystemMessage() {
+  const systemMessage = document.getElementById("system-message").value;
+  if (systemMessage === '') {
+    return; // Exit the function if the system message input is empty
+  }
+
+  const response = await fetch('/api/set_system_message', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ message: systemMessage })
+  });
+
+  if (response.ok) {
+    console.log("System message set successfully");
+  } else {
+    console.error("Failed to set system message");
+  }
+}
+
 // Function to initialize the chatbox with existing messages
 function initializeChatbox() {
   const gptMessages = document.getElementsByClassName("gpt-message");

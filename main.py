@@ -54,6 +54,13 @@ else:
     messages = load_write_messages(messages, write=True)
 
 
+@app.post("/api/set_system_message")
+async def set_system_message(request: Request):  # Receive the system message from the request body
+    data = await request.json()
+    message = data.get('message')
+    print(type(message))
+    messages.append({"role": "system", "content": message})
+
 @app.post("/api/stream")
 async def stream(request: Request):  # Receive the user's message from the request body
     data = await request.json()
