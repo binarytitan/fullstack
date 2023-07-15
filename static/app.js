@@ -80,7 +80,7 @@ let lastMessageElement = null;
 function addMessage(role, content) {
   const messageElement = document.createElement("span");
   messageElement.classList.add(`${role}-message`);
-  messageElement.innerText = content;
+  messageElement.innerHTML = content.split('\n').join('<br>'); // Replace newline characters with HTML line breaks
   chatbox.appendChild(messageElement);
 
   chatbox.scrollTo(0, chatbox.scrollHeight); // Always scroll to the bottom after adding a new message
