@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  
+  <title>Document</title>
+</head>
+<body>
+  <header>
+    <h1>GPT Chat App</h1>
+    <div>
+    <button class="btn-1" onclick="setScheme(1)"></button>
+    <button class="btn-2" onclick="setScheme(2)"></button>
+    <button class="btn-3" onclick="setScheme(3)"></button>  
+    <button class="btn-4" onclick="setScheme(4)"></button>
+    <button class="btn-5" onclick="setScheme(5)"></button>
+    </div>
+  </header>
+  
+  <div class="chatbox" id="chatbox">
+    <!-- conversation messages will go here -->
+
+  </div>
+  
+  <footer class="user-input">
+    <textarea name="" id="user-input" rows="1" placeholder="Your message" ></textarea>
+    <span id="send-btn" class="material-symbols-outlined">
+      send
+      </span>
+  </footer>
+  <script src="app.js"></script>
+</body>
+
+</html>

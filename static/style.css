@@ -1,0 +1,233 @@
+:root {
+  --primary-color: rgb(40, 0, 78);
+  --secondary-color: rgb(54, 0, 104);
+  --accent-color: rgb(71, 0, 138);
+  --text-color: rgb(172, 170, 170);
+  --scrollbar-color: rgb(91, 0, 177);
+  --scrollbar-track-color: rgb(54, 0, 104);
+  --send-btn-color: rgb(88, 0, 170);
+  --send-btn-hover-color: rgb(117, 0, 153);
+  --send-btn-active-color: rgb(178, 0, 233);
+}
+
+/* Color Theme 1 */
+.theme-1 {
+  --primary-color: rgb(40, 0, 78);
+  --secondary-color: rgb(54, 0, 104);
+  --accent-color: rgb(71, 0, 138);
+  --text-color: rgb(172, 170, 170);
+  --scrollbar-color: rgb(91, 0, 177);
+  --scrollbar-track-color: rgb(54, 0, 104);
+  --send-btn-color: rgb(88, 0, 170);
+  --send-btn-hover-color: rgb(117, 0, 153);
+  --send-btn-active-color: rgb(178, 0, 233);
+}
+
+/* Color Theme 2 */
+.theme-2 {
+  --primary-color: rgb(102, 0, 34);
+  --secondary-color: rgb(147, 0, 50);
+  --accent-color: rgb(192, 57, 43);
+  --text-color: rgb(210, 210, 210);
+  --scrollbar-color: rgb(192, 57, 43);
+  --scrollbar-track-color: rgb(147, 0, 50);
+  --send-btn-color: rgb(147, 0, 50);
+  --send-btn-hover-color: rgb(192, 57, 43);
+  --send-btn-active-color: rgb(231, 76, 60);
+}
+
+/* Color Theme 3 */
+.theme-3 {
+  --primary-color: rgb(189, 195, 199);
+  --secondary-color: rgb(44, 62, 80);
+  --accent-color: rgb(52, 73, 94);
+  --text-color: rgb(0, 0, 0);
+  --scrollbar-color: rgb(52, 73, 94);
+  --scrollbar-track-color: rgb(44, 62, 80);
+  --send-btn-color: rgb(44, 62, 80);
+  --send-btn-hover-color: rgb(52, 73, 94);
+  --send-btn-active-color: rgb(231, 76, 60);
+}
+
+/* Color Theme 4 */
+.theme-4 {
+  --primary-color: rgb(0, 0, 0);
+  --secondary-color: rgb(44, 62, 80);
+  --accent-color: rgb(52, 73, 94);
+  --text-color: rgb(227, 121, 109);
+  --scrollbar-color: rgb(52, 73, 94);
+  --scrollbar-track-color: rgb(44, 62, 80);
+  --send-btn-color: rgb(44, 62, 80);
+  --send-btn-hover-color: rgb(52, 73, 94);
+  --send-btn-active-color: rgb(231, 76, 60);
+}
+
+/* Color Theme 5 */
+.theme-5 {
+  --primary-color: rgb(149, 165, 166);
+  --secondary-color: rgb(127, 140, 141);
+  --accent-color: rgb(44, 62, 80);
+  --text-color: rgb(236, 240, 241);
+  --scrollbar-color: rgb(44, 62, 80);
+  --scrollbar-track-color: rgb(127, 140, 141);
+  --send-btn-color: rgb(127, 140, 141);
+  --send-btn-hover-color: rgb(44, 62, 80);
+  --send-btn-active-color: rgb(52, 73, 94);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+  width: 100%;
+  font-size: 1rem;
+}
+header button {
+  height: 1.5rem;
+  width: 1.5rem;
+  border: none;
+  border-radius: 50%;
+}
+header button:hover {
+  scale: 1.5;
+}
+
+.btn-1 {
+  background-color: rgb(54, 0, 104);
+}
+.btn-2 {
+  background-color: rgb(147, 0, 50);
+}
+.btn-3 {
+  background-color: rgb(52, 73, 94);
+}
+.btn-4 {
+  background-color: rgb(0, 22, 44);
+}
+.btn-5 {
+  background-color: rgb(95, 135, 175);
+}
+
+
+
+.chatbox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 2rem;
+  background-color: var(--secondary-color);
+  flex: 1;
+  width: 100%;
+  max-height: 80vh; /* adjust as needed */
+  overflow-y: auto; /* makes the chatbox scrollable */
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-color) var(--scrollbar-track-color);
+  box-shadow: inset 0 0 20px rgb(0, 0, 0);
+  /* z-index: 2; */
+}
+
+.chatbox::-webkit-scrollbar {
+  width: 6px;
+  background-color: var(--scrollbar-track-color);
+}
+
+.chatbox::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-color);
+  border-radius: 4px;
+}
+
+.gpt-message, .user-message {
+  display: flex;
+  align-items: flex-start;
+  max-width: 800px;
+  margin: 0.5rem 0;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  color: var(--text-color);
+  background-color: var(--accent-color);
+  box-shadow: 0 0 3px rgb(0, 0, 0);
+  width: 100%; /* Set the width to 100% */
+}
+.user-message {
+  background-color: var(--primary-color);
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 10vh;
+  width: 100%;
+  font-size: 1rem;
+  padding: 1rem 2rem;
+}
+
+textarea {
+  width: 80%;
+  max-width: 600px;
+  min-height: 1rem;
+  max-height: 7rem;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-color) var(--scrollbar-track-color);
+  resize: none;
+  padding: 1rem;
+  border-radius: 5px;
+  font-size: 0.7rem;
+  color: var(--text-color);
+  background-color: var(--accent-color);
+  border: none;
+  box-shadow: inset 0 0 3px rgb(0, 0, 0);
+  transition: box-shadow 1s ease;
+}
+
+textarea::-webkit-scrollbar {
+  width: 6px;
+  background-color: var(--scrollbar-track-color);
+}
+
+textarea::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-color);
+  border-radius: 4px;
+}
+
+textarea:focus {
+  outline: none;
+  border: 2px solid rgb(0, 0, 0);
+  box-shadow: inset 0 0 15px rgb(12, 0, 0);
+}
+
+#send-btn {
+  color: var(--send-btn-color);
+}
+
+#send-btn:hover {
+  cursor: pointer;
+  color: var(--send-btn-hover-color);
+}
+
+#send-btn:active {
+  cursor: pointer;
+  color: var(--send-btn-active-color);
+}
+
