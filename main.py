@@ -61,6 +61,10 @@ async def set_system_message(request: Request):  # Receive the system message fr
     print(type(message))
     messages.append({"role": "system", "content": message})
 
+@app.get("/api/chat_history")
+async def chat_history():  # Return the chat history
+    return messages
+
 @app.post("/api/stream")
 async def stream(request: Request):  # Receive the user's message from the request body
     data = await request.json()

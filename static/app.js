@@ -194,14 +194,16 @@ async function setSystemMessage() {
   }
 }
 
-// Function to initialize the chatbox with existing messages
-function initializeChatbox() {
-  const gptMessages = document.getElementsByClassName("gpt-message");
-  for (let i = 0; i < gptMessages.length; i++) {
-    const content = gptMessages[i].innerText;
-    addMessage("gpt", content);
+// Function to fetch the chat history from the backend
+async function fetchChatHistory() {
+  const response = await fetch('/api/chat_history');
+  const chatHistory = await response.json();
+
+  for (let i = 0; i < chatHistory.length; i++) {
+    const message = chatHistory[i];
+    addMessage(message.role, message.content);
   }
 }
 
-// Call the function to initialize the chatbox
-initializeChatbox();
+// Call the function to fetch the chat history
+fetchChatHistory();
